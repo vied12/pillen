@@ -24,10 +24,15 @@ body {
 	}
 }
 
-.image {
-	display: inline-block;
-	width  : 100px;
-	height : 100px;
-	background-size : cover;
-	background-position: center;
+#myModal {
+	.images {
+		text-align: right;
+		.image {
+			display: inline-block;
+			width  : 100px;
+			height : 100px;
+			background-size : cover;
+			background-position: center;
+		}
+	}
 }
