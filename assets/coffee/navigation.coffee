@@ -26,7 +26,6 @@
 class Navigation extends serious.Widget
 
     @COLORS = [
-        "black"
         "#486A6A"
         "#99A0AB"
         "#8A8B49"
@@ -65,6 +64,8 @@ class Navigation extends serious.Widget
     retrieveData: (data) =>
         # data = data[..10]
         for d in data
+            if d.images.length < 1
+                console.log d
             if d.colorz.length == 2
                 d.color = chroma.interpolate(d.colorz[0], d.colorz[1], 0.5).hex()
             else
