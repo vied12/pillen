@@ -5,8 +5,8 @@
 # -----------------------------------------------------------------------------
 # License : GNU General Public License
 # -----------------------------------------------------------------------------
-# Creation : 02-Jul-2014
-# Last mod : 02-Jul-2014
+# Creation : 03-Aug-2014
+# Last mod : 03-Aug-2014
 # -----------------------------------------------------------------------------
 # This file is part of Serious-Toolkit.
 # 
@@ -25,37 +25,17 @@
 
 class Navigation extends serious.Widget
 
-	constructor: ->
-		@feature = [
-				{
-					feature     : "Webapp Flask based"
-				}
-				{
-					feature     : "Write your"
-					write       : [
-						{ from : "Javascript", to : "coffeescript" }
-						{ from : "html"      , to : "jade" }
-						{ from : "css"       , to : ["clevercss", "less"] }
-					]
-				}
-				{
-					feature     : "Front-End Template Engine"
-					description : "with Knockout.js"
-				}
-				{
-					feature     : "Mechanism to render the application into a set of static files"
-					description : "with Frozen-Flask"
-				}
-				{
-					feature     : "Translation supported"
-					description : "thanks to Flask-Babel"
-				}
-				{
-					feature     : "<a href=\"https://github.com/vied12/serious-toolkit/tree/master/assets/vendors/serious-toolkit/widget.coffee\", target=\"_blank\">widget.js</a> as front-end controller"
-				}
-			]
 
 	bindUI: () =>
-		@scope.features = ko.observableArray(@feature)
+		@scope.pillen = ko.observableArray([])
+		$.get("static/pillen.json", @retrieveData)
+
+	retrieveData: (data) =>
+		# for d in data
+		# 	if d.colorz.length == 2
+		# 		moy = chroma.interpolate(d.colorz[0], d.colorz[1], 0.5)
+		# 		d.moy = moy
+		# 	console.log d.colorz
+		@scope.pillen(data)
 
 # EOF

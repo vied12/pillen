@@ -28,7 +28,7 @@ js_all:
     # - "../assets/vendors/topojson.js"
     # - "../assets/vendors/jquery.easing.1.3.js"
     # - "../assets/vendors/jquery.easing.compatibility.js"
-    # - "../assets/vendors/chroma.js"
+    - "../assets/vendors/chroma.js"
     # - "../assets/vendors/jquery.qtip.js"
     - contents:
       - "../assets/vendors/serious-toolkit/utils.coffee"

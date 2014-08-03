@@ -1,9 +1,11 @@
 | {% extends 'base.html' %}
 | {% block content %}
 
-.row
-	.small-4.column coucou
-	.small-4.column coucou
-	.small-4.column coucou
-
+.row.widget(data-widget="Navigation")
+	.pill(data-bind="foreach: pillen")
+		.title(data-bind="text: Name")
+		.images(data-bind="foreach: images")
+			img.image(data-bind="attr: {src: 'static/pillen/'+$data}")
+		.colors(data-bind="foreach: colorz")
+			.color(data-bind="style: {'background-color': $data}")
 | {% endblock %}
