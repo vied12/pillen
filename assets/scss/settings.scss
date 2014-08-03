@@ -10,7 +10,7 @@
 // $rem-base: 16px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
-// @import "foundation/functions";
+@import "../vendors/foundation/scss/foundation/functions";
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
@@ -134,7 +134,7 @@ $primary-color: #008CBA;
 
 // We use these to control header font sizes
 // $h1-font-size: rem-calc(44);
-// $h2-font-size: rem-calc(37);
+$h2-font-size: rem-calc(30);
 // $h3-font-size: rem-calc(27);
 // $h4-font-size: rem-calc(23);
 // $h5-font-size: rem-calc(18);

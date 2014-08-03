@@ -1,6 +1,12 @@
 | {% extends 'base.html' %}
 | {% block content %}
 
+.row
+	h1 PILLEN
+
+	| Le référentiel colorimétrique des petites pilules
+
+
 .row.widget(data-widget="Navigation")
 	h2 FARBEN
 	a.all(data-bind="style: {'background-color': 'white'}, click: filterPillen.bind($data, undefined)") ALL
@@ -13,28 +19,31 @@
 
 	.reveal-modal(data-bind="with: selectedPil", id="myModal", class="reveal-modal", data-reveal)
 		h1(data-bind="text: Name")
-		.images(data-bind="foreach: images")
-			.image(data-bind="style: {'background-image': 'url(static/pillen/'+$data+')'}")
-		table
-			tbody
-				tr
-					td Inhalt
-					td(data-bind="text: Inhalt")
-				tr
-					td Bruchrille
-					td(data-bind="text: Bruchrille")
-				tr
-					td Datum
-					td(data-bind="text: Datum")
-				tr
-					td Dicke
-					td(data-bind="text: Dicke")
-				tr
-					td Durchmesser
-					td(data-bind="text: Durchmesser")
-				tr
-					td Ort
-					td(data-bind="html: Ort")
+		.row
+			.small-8.columns
+				table
+					tbody
+						tr
+							td Inhalt
+							td(data-bind="text: Inhalt")
+						tr
+							td Bruchrille
+							td(data-bind="text: Bruchrille")
+						tr
+							td Datum
+							td(data-bind="text: Datum")
+						tr
+							td Dicke
+							td(data-bind="text: Dicke")
+						tr
+							td Durchmesser
+							td(data-bind="text: Durchmesser")
+						tr
+							td Ort
+							td(data-bind="html: Ort")
+			.small-4.columns
+				.images(data-bind="foreach: images")
+					.image(data-bind="style: {'background-image': 'url(static/pillen/'+$data+')'}")
 		a.close-reveal-modal &#215;
 | {% endblock %}
 
