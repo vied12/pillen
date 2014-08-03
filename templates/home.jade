@@ -8,11 +8,11 @@
 
 
 .row.widget(data-widget="Navigation")
-	h2 FARBEN
+
 	a.all(data-bind="style: {'background-color': 'white'}, click: filterPillen.bind($data, undefined)") ALL
 	div(data-bind="foreach: colors")
 		.color(data-bind="style: {'background-color': $data}, click: $parent.filterPillen")
-	h2 PILLEN
+
 	.pillen(data-bind="foreach: filteredPillen")
 		.color.has-tip(data-bind="attr: {title: Name}, style: {'background-image': 'url(static/pillen/'+images[0]+')'}, click: $parent.showInfos")
 		//- .color(data-bind="style: {'background-color': color}")
