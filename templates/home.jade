@@ -3,11 +3,38 @@
 
 .row.widget(data-widget="Navigation")
 	h2 FARBEN
+	a.all(data-bind="style: {'background-color': 'white'}, click: filterPillen.bind($data, undefined)") ALL
 	div(data-bind="foreach: colors")
 		.color(data-bind="style: {'background-color': $data}, click: $parent.filterPillen")
 	h2 PILLEN
 	.pillen(data-bind="foreach: filteredPillen")
-		.color(data-bind="style: {'background-image': 'url(static/pillen/'+images[0]+')'}")
+		.color.has-tip(data-bind="attr: {title: Name}, style: {'background-image': 'url(static/pillen/'+images[0]+')'}, click: $parent.showInfos")
 		//- .color(data-bind="style: {'background-color': color}")
 
+	.reveal-modal(data-bind="with: selectedPil", id="myModal", class="reveal-modal", data-reveal)
+		h1(data-bind="text: Name")
+		.images(data-bind="foreach: images")
+			.image(data-bind="style: {'background-image': 'url(static/pillen/'+$data+')'}")
+		table
+			tbody
+				tr
+					td Inhalt
+					td(data-bind="text: Inhalt")
+				tr
+					td Bruchrille
+					td(data-bind="text: Bruchrille")
+				tr
+					td Datum
+					td(data-bind="text: Datum")
+				tr
+					td Dicke
+					td(data-bind="text: Dicke")
+				tr
+					td Durchmesser
+					td(data-bind="text: Durchmesser")
+				tr
+					td Ort
+					td(data-bind="text: Ort")
+		a.close-reveal-modal &#215;
 | {% endblock %}
+
