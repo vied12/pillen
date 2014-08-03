@@ -9,7 +9,7 @@
 	h2 PILLEN
 	.pillen(data-bind="foreach: filteredPillen")
 		.color.has-tip(data-bind="attr: {title: Name}, style: {'background-image': 'url(static/pillen/'+images[0]+')'}, click: $parent.showInfos")
-		.color(data-bind="style: {'background-color': color}")
+		//- .color(data-bind="style: {'background-color': color}")
 
 	.reveal-modal(data-bind="with: selectedPil", id="myModal", class="reveal-modal", data-reveal)
 		h1(data-bind="text: Name")
