@@ -18,7 +18,7 @@
 #     You should have received a copy of the GNU General Public License
 #     along with Serious-Toolkit.  If not, see <http://www.gnu.org/licenses/>.
 
-PROJECT_NAME = "Serious-Toolkit"
+PROJECT_NAME = "Pillen"
 PYC          = $(wildcard *.pyc */*.pyc sources/*/*.pyc sources/*/*/*.pyc sources/*/*/*/*.pyc sources/*/*/*/*/*.pyc)
 CACHE        = $(wildcard static/.webassets-cache static/gen)
 WEBAPP       = $(wildcard webapp.py)
@@ -50,9 +50,9 @@ install:
 	@echo "installed"
 
 freeze: clean
-	-rm build -r
+	$(RM) build -r
 	. `pwd`/.env ;  export DEBUG="False" ; export BASE_URL=$(BASE_URL) ;python -c "from webapp import app; from flask_frozen import Freezer; freezer = Freezer(app); freezer.freeze()"
-	-rm build/static/.webassets-cache/ -r
+	$(RM) build/static/.webassets-cache/ -r
 	@echo "freezed in $(DIST_DIR)"
 
 update_i18n:
