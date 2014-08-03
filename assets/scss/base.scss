@@ -22,22 +22,12 @@ body {
 		background-size : cover;
 		background-position: center;
 	}
+}
 
-	.image {
-		display: inline-block;
-		width  : 100px;
-		height : 100px;
-		background-size : cover;
-		background-position: center;
-	}
-
-	.info {
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		background-color: #DEDEDE;
-		padding: 20px;
-	}
+.image {
+	display: inline-block;
+	width  : 100px;
+	height : 100px;
+	background-size : cover;
+	background-position: center;
 }
