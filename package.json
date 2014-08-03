@@ -1,0 +1,16 @@
+{
+  "name": "Serious-Toolkit",
+  "version": "0.0.0",
+  "description": "A Serious-Toolkit to start serious apps",
+  "main": "webapp.py",
+  "dependencies": {
+    "less": "^1.7.3",
+    "coffee-script": "^1.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "GPL2"
+}
