@@ -2,10 +2,12 @@
 | {% block content %}
 
 .row.widget(data-widget="Navigation")
-	.pill(data-bind="foreach: pillen")
-		.title(data-bind="text: Name")
-		.images(data-bind="foreach: images")
-			img.image(data-bind="attr: {src: 'static/pillen/'+$data}")
-		.colors(data-bind="foreach: colorz")
-			.color(data-bind="style: {'background-color': $data}")
+	h2 FARBEN
+	div(data-bind="foreach: colors")
+		.color(data-bind="style: {'background-color': $data}, click: $parent.filterPillen")
+	h2 PILLEN
+	.pillen(data-bind="foreach: filteredPillen")
+		.color(data-bind="style: {'background-image': 'url(static/pillen/'+images[0]+')'}")
+		//- .color(data-bind="style: {'background-color': color}")
+
 | {% endblock %}
