@@ -43,6 +43,8 @@ class Navigation extends serious.Widget
         "#B88A00"]
 
     bindUI: () =>
+        @UIS =
+            modal_box : '#myModal'
         @scope.selectedPil    = ko.observable(null)
         @scope.colorFiltered  = ko.observable("")
         @scope.pillen         = ko.observableArray([])
@@ -50,7 +52,7 @@ class Navigation extends serious.Widget
         @scope.filterPillen   = (color) => @scope.colorFiltered(color)
         @scope.showInfos      = (pil) =>
             @scope.selectedPil(pil)
-            $('#myModal').foundation('reveal', 'open')
+            @uis.modal_box.foundation('reveal', 'open')
         @scope.filteredPillen = ko.computed =>
             color = @scope.colorFiltered()
             if not color
