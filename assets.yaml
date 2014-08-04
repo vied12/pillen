@@ -4,6 +4,7 @@ css_all:
   filters: cssmin
   contents:
     - "../static/vendors/loader.css"
+    - "http://fonts.googleapis.com/css?family=Share"
     # - contents:
     #   - "../assets/less/base.less"
     #   filters: less
