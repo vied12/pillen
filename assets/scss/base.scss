@@ -7,13 +7,13 @@ body {
 	.loader {
 		opacity: 0;
 	}
-	.Navigation {
+	.Navigation, .footer {
 		opacity: 1;
 		transition-duration: 1s;
 		transition-property: opacity;
 	}
 	&.loading {
-		.Navigation {
+		.Navigation, .footer {
 			opacity: 0;
 		}
 		.loader {
