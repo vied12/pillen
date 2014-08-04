@@ -34,11 +34,9 @@ class Navigation extends serious.Widget
         "#6D7563"
         "#833636"
         "#F1CDB1"
-        "#FF3366"
         "#FF6633"
         "#A37A35"
         "#739673"
-        "#015563"
         "#B88A00"]
 
     bindUI: () =>
@@ -89,7 +87,6 @@ class Navigation extends serious.Widget
                 ordered_pillen[Navigation.COLORS[index]] = [] unless ordered_pillen[Navigation.COLORS[index]]?
                 ordered_pillen[Navigation.COLORS[index]].push(d)
                 d.base_color = Navigation.COLORS[index]
-
         @scope.pillen(data)
         @scope.colors(Navigation.COLORS)
 
