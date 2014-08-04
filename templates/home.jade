@@ -9,12 +9,12 @@
 
 .Navigation.row.widget(data-widget="Navigation")
 
-	a.all(data-bind="style: {'background-color': 'white'}, click: filterPillen.bind($data, undefined)") ALL
+	a.all(data-bind="style: {'backgroundColor': 'white'}, click: filterPillen.bind($data, undefined)") ALL
 	div(data-bind="foreach: colors")
-		.color(data-bind="style: {'background-color': $data}, click: $parent.filterPillen")
+		.color(data-bind="style: {'backgroundColor': $data}, click: $parent.filterPillen")
 
 	.pillen(data-bind="foreach: filteredPillen")
-		.color.has-tip(data-bind="attr: {title: Name}, style: {'background-image': 'url(static/pillen/'+images[0]+')'}, click: $parent.showInfos")
+		.color.has-tip(data-bind="attr: {title: Name}, style: {'backgroundImage': 'url(static/pillen/'+images[0]+')'}, click: $parent.showInfos")
 		//- .color(data-bind="style: {'background-color': color}")
 
 	.reveal-modal(data-bind="with: selectedPil", id="myModal", class="reveal-modal", data-reveal)
@@ -43,7 +43,7 @@
 							td(data-bind="html: Ort")
 			.small-4.columns
 				.images(data-bind="foreach: images")
-					.image(data-bind="style: {'background-image': 'url(static/pillen/'+$data+')'}")
+					.image(data-bind="style: {'backgroundImage': 'url(static/pillen/'+$data+')'}")
 		a.close-reveal-modal &#215;
 
 .footer.row
