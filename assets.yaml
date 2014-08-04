@@ -1,6 +1,7 @@
 ---
 css_all: 
   output: gen/style.css
+  filters: cssmin
   contents:
     - "../static/vendors/loader.css"
     # - contents:
@@ -18,6 +19,7 @@ css_all:
 
 js_all: 
   output: gen/scripts.js
+  filters: jsmin
   contents:
     - "../static/vendors/modernizr.js"
     - "../static/vendors/jquery.min.js"
