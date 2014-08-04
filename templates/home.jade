@@ -24,7 +24,7 @@
 	.reveal-modal(data-bind="with: selectedPil", id="myModal", class="reveal-modal", data-reveal)
 		h1(data-bind="text: Name")
 		.row
-			.small-8.columns
+			.medium-8.columns
 				table
 					tbody
 						tr
@@ -45,7 +45,7 @@
 						tr
 							td Ort
 							td(data-bind="html: Ort")
-			.small-4.columns
+			.medium-4.columns
 				.images(data-bind="foreach: images")
 					.image(data-bind="style: {'backgroundImage': 'url(static/pillen/'+$data+')'}")
 		a.close-reveal-modal &#215;

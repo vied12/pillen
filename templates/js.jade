@@ -3,5 +3,5 @@ script(type='text/javascript', src='{{ ASSET_URL  | relative_url }}')
 | {% endassets %}
 | {% block extra_js %}{% endblock %}
 script.
-	serious.Widget.bindAll();
-	$.preload({{ assets | tojson }}, function() {$("body").removeClass("loading")});
+	
+	$.preload({{ assets | tojson }}, function() {serious.Widget.bindAll(); $("body").removeClass("loading")});

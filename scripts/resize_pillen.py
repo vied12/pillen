@@ -11,7 +11,7 @@
 # Last mod : 03-Aug-04
 # -----------------------------------------------------------------------------
 import glob
-
+import os
 try:
     import Image
 except ImportError:
@@ -20,10 +20,10 @@ except ImportError:
 def resize(filename):
     img = Image.open(filename)
     img.thumbnail((100, 100))
-    img.save(filename)
+    img.save(os.path.join("../static/pillen", os.path.basename(filename)))
    
 if __name__ == "__main__":
-    for image in glob.glob("../static/pillen/*"):
+    for image in glob.glob("../tmp/*"):
         resize(image)
 
 # EOF
