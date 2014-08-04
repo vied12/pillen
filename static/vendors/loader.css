@@ -1,12 +1,12 @@
 /* -------------- loader -------------- */
 
 .loader{
-	color:white;
-	position: relative;
+	color:#494949;
+	position: absolute;
 	height: 80px;
 	width: 80px;
 	border-radius: 80px;
-	border: 3px solid  rgba(255,255,255, .7);
+	border: 3px solid  rgba(0,0,0, .7);
 
 	top: 28%;
 	top: -webkit-calc(50% - 43px);
@@ -29,7 +29,7 @@
 	width: 11px;
 	height: 11px;
 	border-radius: 10px;
-	background-color: #fff;
+	background-color: #494949;
 }
 
 @-webkit-keyframes loader{

@@ -2,6 +2,7 @@
 css_all: 
   output: gen/style.css
   contents:
+    - "../static/vendors/loader.css"
     # - contents:
     #   - "../assets/less/base.less"
     #   filters: less
