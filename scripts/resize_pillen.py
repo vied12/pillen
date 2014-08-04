@@ -10,11 +10,6 @@
 # Creation : 03-Aug-04
 # Last mod : 03-Aug-04
 # -----------------------------------------------------------------------------
-import json
-from collections import namedtuple
-from math import sqrt
-import random
-import sys
 import glob
 
 try:
@@ -24,7 +19,7 @@ except ImportError:
 
 def resize(filename):
     img = Image.open(filename)
-    img.thumbnail((200, 200))
+    img.thumbnail((100, 100))
     img.save(filename)
    
 if __name__ == "__main__":
