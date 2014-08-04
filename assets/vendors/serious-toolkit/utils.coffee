@@ -42,6 +42,11 @@ serious.Utils.clone = (obj) ->
 		newInstance[key] = window.serious.Utils.clone obj[key]
 	return newInstance
 
+serious.Utils.startswith = (string="", startsWith) ->
+	if (startsWith.length > string.length)
+		return false
+	else return string.substring(0, startsWith.length) == startsWith
+
 serious.Utils.getHashParams = ->
 	hashParams = {}
 	a = /\+/g # Regex for replacing addition symbol with a space

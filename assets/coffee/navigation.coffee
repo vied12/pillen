@@ -46,6 +46,7 @@ class Navigation extends serious.Widget
             modal_box : '#myModal'
         @scope.selectedPil    = ko.observable(null)
         @scope.colorFiltered  = ko.observable("")
+        @scope.searchKeywords = ko.observable("")
         @scope.pillen         = ko.observableArray([])
         @scope.colors         = ko.observableArray([])
         @scope.filterPillen   = (color) => @scope.colorFiltered(color)
@@ -53,12 +54,15 @@ class Navigation extends serious.Widget
             @scope.selectedPil(pil)
             @uis.modal_box.foundation('reveal', 'open')
         @scope.filteredPillen = ko.computed =>
-            color = @scope.colorFiltered()
-            if not color
-                return @scope.pillen()
-            else
-                return ko.utils.arrayFilter @scope.pillen(), (item) ->
-                    return item.base_color == color
+            search_keywords = @scope.searchKeywords()
+            color           = @scope.colorFiltered()
+            result          = @scope.pillen()
+            if search_keywords
+                result = result.filter (item) ->
+                    return serious.Utils.startswith(item.Name.toLowerCase(), search_keywords.toLowerCase())
+            if color
+                result = result.filter (item) ->  item.base_color == color
+            return result
         $.get("static/pillen.json", @retrieveData)
 
     retrieveData: (data) =>
