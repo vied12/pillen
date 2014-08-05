@@ -7,18 +7,37 @@ body {
 	.loader {
 		opacity: 0;
 	}
-	.Navigation, .footer {
-		opacity: 1;
-		transition-duration: 1s;
-		transition-property: opacity;
-	}
 	&.loading {
 		.Navigation, .footer {
 			opacity: 0;
+			display: none;
 		}
 		.loader {
 			opacity: 1;
 		}
+	}
+	&:not(.loading) {
+		.Navigation, .footer {
+			-webkit-animation-duration: 2s;
+			-webkit-animation-name: fadeInFromNone;
+		}
+	}
+}
+
+@-webkit-keyframes fadeInFromNone {
+	0% {
+		display:none; 
+		opacity: 0;
+	}
+
+	1% {
+		display: block ; 
+		opacity: 0;
+	}
+
+	100% {
+		display: block ; 
+		opacity: 1;
 	}
 }
 
