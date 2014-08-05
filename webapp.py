@@ -29,7 +29,6 @@ from flask import Flask, render_template, request, send_file, g, \
 	send_from_directory, Response, abort, session, redirect, url_for, make_response
 from flask.ext.assets import Environment, YAMLLoader
 from flask.ext.babel import Babel
-import glob
 
 # app
 app = Flask(__name__)
@@ -51,8 +50,7 @@ babel = Babel(app)
 @app.route('/')
 def index():
 	g.language = "en"
-	assets = glob.glob("static/pillen/*")
-	response = make_response(render_template('home.jade', assets=assets))
+	response = make_response(render_template('home.jade'))
 	return response
 
 # -----------------------------------------------------------------------------

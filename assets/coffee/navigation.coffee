@@ -66,8 +66,8 @@ class Navigation extends serious.Widget
     retrieveData: (data) =>
         # data = data[..10]
         for d in data
-            if d.images.length < 1
-                console.log d
+            # remove file extension from images names
+            d.classe = d.images[0].substr(0, d.images[0].lastIndexOf('.'))
             if d.colorz.length == 2
                 d.color = chroma.interpolate(d.colorz[0], d.colorz[1], 0.5).hex()
             else

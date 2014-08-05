@@ -10,7 +10,6 @@ css_all:
     #   filters: less
     #   depends: "../assets/**/*.less"
     #   output: gen/less.css
-    #   debug : false
     - contents:
       - "../assets/scss/base.scss"
       filters: scss
@@ -18,7 +17,7 @@ css_all:
       output: gen/sass.css
       debug : false
 
-js_all: 
+js_all:
   output: gen/scripts.js
   filters: jsmin
   contents:
