@@ -5,6 +5,11 @@
 		<meta charset="utf-8">{#  #}</meta>
 		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="icon" type="image/jpg" href="static/pillen/bild1-5KbBeT.jpg" />
+		<meta property="og:image" content="{{ url_for("static", filename="screenshot.png", _external=True) }}"/>
+		<meta property="og:title" content="Le référentiel colorimétrique des petites pilules"/>
+		<meta property="og:site_name" content="Pillen"/>
+		<meta property="og:type" content="website"/>
 		<title>{% trans %}Pillen{% endtrans %}</title>
 
 		{% include "css.jade" %}
