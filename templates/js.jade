@@ -4,4 +4,8 @@ script(type='text/javascript', src='{{ ASSET_URL  | relative_url }}')
 | {% block extra_js %}{% endblock %}
 script.
 	serious.Widget.bindAll();
-	$.preload(["static/sprite/sprites.png"], function() {$("body").removeClass("loading")});
+	$(document).foundation();
+	$.preload(["static/sprite/sprites.png"], function() {
+		$("body").removeClass("loading");
+		$(document).foundation('joyride', 'start');
+	});

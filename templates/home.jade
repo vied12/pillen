@@ -11,14 +11,14 @@
 
 	.row
 		.colors.columns.large-9
-			.color.all(data-bind="click: filterPillen.bind($data, undefined)")
+			.color.all(data-bind="click: filterPillen.bind($data, undefined)", id="firstStop")
 			// ko foreach: colors
-			.color(data-bind="style: {'backgroundColor': $data}, click: $parent.filterPillen")
+			.color(data-bind="style: {'backgroundColor': $data}, click: $parent.filterPillen, attr: {id: 'color_'+ $index()}")
 			// /ko
 		.search-logo.columns.large-3
-			input(type="text", placeholder="logo: android, mc donalds ...", data-bind="value: searchKeywords, valueUpdate: 'input'")
+			input(id="secondStop", type="text", placeholder="logo: android, mc donalds ...", data-bind="value: searchKeywords, valueUpdate: 'input'")
 	.pillen(data-bind="foreach: filteredPillen")
-		.color.has-tip(data-bind="attr: {title: Name}, css: 'sprite-sprites-'+classe, click: $parent.showInfos")
+		.color.has-tip(data-bind="attr: {title: Name, id: 'pill_'+ $index()}, css: 'sprite-sprites-'+classe, click: $parent.showInfos")
 		//- .color(data-bind="style: {'background-color': color}")
 
 	.reveal-modal(data-bind="with: selectedPil", id="myModal", class="reveal-modal", data-reveal)
@@ -58,9 +58,16 @@
 		a(href="http://www.mindzone.info/aktuelles/pillenwarnungen") www.mindzone.info/aktuelles/pillenwarnungen/
 
 ol(class="joyride-list", data-joyride)
-	li(data-id="firstStop", data-text="Next", data-options="tip_location: top; prev_button: false")
-		p coucou
-	li(data-button="End", data-prev-text="Prev")
+	li(data-id="color_3", data-text="Next", data-options="tip_location: bottom; prev_button: false")
+		p Hello ! This is a tree steps tour.
+		p To filter pills, you can select a color.
+		p Black is special. Black means all.
+	li(data-id="secondStop", data-text="Next", data-options="tip_location: bottom; prev_button: false")
+		p You can also search by symbol name.
+		p But keep in mind the selected color is still filtering !
+	li(data-id="pill_20", data-text="Next", data-options="tip_location: top; prev_button: false")
+		p Wanna more ? Click on a pill.
+		p Now you now everything. Have a nice party.
 
 | {% endblock %}
 
