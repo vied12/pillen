@@ -27,27 +27,27 @@ msgstr ""
 
 #: templates/home.html:30
 msgid "Composition"
-msgstr ""
+msgstr "Inhalt"
 
 #: templates/home.html:34
 msgid "Breakline"
-msgstr ""
+msgstr "Bruchrille"
 
 #: templates/home.html:38
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 #: templates/home.html:42
 msgid "Thickness"
-msgstr ""
+msgstr "Dicke"
 
 #: templates/home.html:46
 msgid "Diameter"
-msgstr ""
+msgstr "Durchmesser"
 
 #: templates/home.html:50
 msgid "Place"
-msgstr ""
+msgstr "Ort"
 
 #: templates/home.html:68
 msgid "Give us feedback and grab the code"
@@ -55,7 +55,7 @@ msgstr ""
 
 #: templates/home.html:71
 msgid "Source"
-msgstr ""
+msgstr "Quelle"
 
 #: templates/home.html:78
 msgid ""
@@ -81,7 +81,3 @@ msgid ""
 "    <p>Now you now everything. Have a nice party.</p>\n"
 "    "
 msgstr ""
-
-#~ msgid "Le référentiel colorimétrique des petites pilules"
-#~ msgstr ""
-
