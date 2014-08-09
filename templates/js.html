@@ -1,11 +1,12 @@
-| {% assets "js_all" %}
-script(type='text/javascript', src='{{ ASSET_URL  | relative_url }}')
-| {% endassets %}
-| {% block extra_js %}{% endblock %}
-script.
+{% assets "js_all" %}
+<script type='text/javascript' src='{{ ASSET_URL  | relative_url }}'></script>
+{% endassets %}
+{% block extra_js %}{% endblock %}
+<script>
 	serious.Widget.bindAll();
 	$(document).foundation();
 	$.preload(["static/sprite/sprites.jpg"], function() {
 		$("body").removeClass("loading");
 		$(document).foundation('joyride', 'start');
 	});
+</script>

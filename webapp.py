@@ -37,8 +37,6 @@ app.config.from_pyfile("settings.cfg")
 assets  = Environment(app)
 bundles = YAMLLoader("assets.yaml").load_bundles()
 assets.register(bundles)
-# pyjade
-app.jinja_env.add_extension('pyjade.ext.jinja.PyJadeExtension')
 # i18n
 babel = Babel(app)
 
@@ -50,7 +48,19 @@ babel = Babel(app)
 @app.route('/')
 def index():
 	g.language = "en"
-	response = make_response(render_template('home.jade'))
+	response = make_response(render_template('home.html'))
+	return response
+
+@app.route('/fr.html')
+def index_fr():
+	g.language = "fr"
+	response = make_response(render_template('home.html'))
+	return response
+
+@app.route('/de.html')
+def index_de():
+	g.language = "de"
+	response = make_response(render_template('home.html'))
 	return response
 
 # -----------------------------------------------------------------------------

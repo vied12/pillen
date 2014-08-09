@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+	<h1>PILLEN</h1>
+	{% trans %}Le référentiel colorimétrique des petites pilules{% endtrans %}
+</div>
+
+<div data-widget="Navigation" class="Navigation row widget">
+  <div class="row">
+    <div class="colors columns large-9">
+      <div data-bind="click: filterPillen.bind($data, undefined)" id="firstStop" class="color all"></div>
+      <!-- ko foreach: colors-->
+      <div data-bind="style: {'backgroundColor': $data}, click: $parent.filterPillen, attr: {id: 'color_'+ $index()}" class="color"></div>
+      <!-- /ko-->
+    </div>
+    <div class="search-logo columns large-3">
+      <input id="secondStop" type="text" placeholder="logo: android, mc donalds ..." data-bind="value: searchKeywords, valueUpdate: 'input'">
+    </div>
+  </div>
+  <div data-bind="foreach: filteredPillen" class="pillen">
+    <div data-bind="attr: {title: Name, id: 'pill_'+ $index()}, css: 'sprite-sprites-'+classe, click: $parent.showInfos" class="color has-tip"></div>
+  </div>
+  <div data-bind="with: selectedPil" id="myModal" data-reveal class="reveal-modal reveal-modal">
+    <h1 data-bind="text: Name"></h1>
+    <div class="row">
+      <div class="medium-8 columns">
+        <table>
+          <tbody>
+            <tr>
+              <td>Inhalt</td>
+              <td data-bind="text: Inhalt"></td>
+            </tr>
+            <tr>
+              <td>Bruchrille</td>
+              <td data-bind="text: Bruchrille"></td>
+            </tr>
+            <tr>
+              <td>Datum</td>
+              <td data-bind="text: Datum"></td>
+            </tr>
+            <tr>
+              <td>Dicke</td>
+              <td data-bind="text: Dicke"></td>
+            </tr>
+            <tr>
+              <td>Durchmesser</td>
+              <td data-bind="text: Durchmesser"></td>
+            </tr>
+            <tr>
+              <td>Ort</td>
+              <td data-bind="html: Ort"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="medium-4 columns">
+        <div data-bind="foreach: images" class="images">
+          <div data-bind="style: {'backgroundImage': 'url(static/pillen/'+$data+')'}" class="image"></div>
+        </div>
+      </div>
+    </div><a class="close-reveal-modal">&#215;</a>
+  </div>
+</div>
+
+<div class="footer row">
+	<div class=" large-6 columns">
+		<img src="static/github.png" width="20" />
+		<a href="https://github.com/vied12/pillen"  target="_blank">Give us feedback and grab the code</a>
+	</div>
+	<div class="large-6 columns large-text-right">
+		Source:
+		<a href="http://www.mindzone.info/aktuelles/pillenwarnungen">www.mindzone.info/aktuelles/pillenwarnungen/</a>
+	</div>
+</div>
+
+<ol data-joyride class="joyride-list">
+  <li data-id="color_3" data-text="Next" data-options="tip_location: bottom; prev_button: false">
+    <p>Hello ! This is a tree steps tour.</p>
+    <p>To filter pills, you can select a color.</p>
+    <p>Black is special. Black means all.</p>
+  </li>
+  <li data-id="secondStop" data-text="Next" data-options="tip_location: bottom; prev_button: false">
+    <p>You can also search by symbol name.</p>
+    <p>But keep in mind the selected color is still filtering !</p>
+  </li>
+  <li data-id="pill_20" data-text="Next" data-options="tip_location: top; prev_button: false">
+    <p>Wanna more ? Click on a pill.</p>
+    <p>Now you now everything. Have a nice party.</p>
+  </li>
+</ol>
+{% endblock %}
