@@ -1,0 +1,84 @@
+# Translations template for PROJECT.
+# Copyright (C) 2014 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2014-08-09 22:57+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+
+#: templates/base.html:13
+msgid "Pillen"
+msgstr ""
+
+#: templates/home.html:5
+msgid "The colorimetric repository of small pills"
+msgstr ""
+
+#: templates/home.html:30
+msgid "Composition"
+msgstr ""
+
+#: templates/home.html:34
+msgid "Breakline"
+msgstr ""
+
+#: templates/home.html:38
+msgid "Date"
+msgstr ""
+
+#: templates/home.html:42
+msgid "Thickness"
+msgstr ""
+
+#: templates/home.html:46
+msgid "Diameter"
+msgstr ""
+
+#: templates/home.html:50
+msgid "Place"
+msgstr ""
+
+#: templates/home.html:68
+msgid "Give us feedback and grab the code"
+msgstr ""
+
+#: templates/home.html:71
+msgid "Source"
+msgstr ""
+
+#: templates/home.html:78
+msgid ""
+"\n"
+"    <p>Hello ! This is a tree steps tour.</p>\n"
+"    <p>To filter pills, you can select a color.</p>\n"
+"    <p>Black is special. Black means all.</p>\n"
+"    "
+msgstr ""
+
+#: templates/home.html:85
+msgid ""
+"\n"
+"    <p>You can also search by symbol name.</p>\n"
+"    <p>But keep in mind the selected color is still filtering !</p>\n"
+"    "
+msgstr ""
+
+#: templates/home.html:91
+msgid ""
+"\n"
+"    <p>Wanna more ? Click on a pill.</p>\n"
+"    <p>Now you now everything. Have a nice party.</p>\n"
+"    "
+msgstr ""
+
