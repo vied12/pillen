@@ -57,7 +57,7 @@ class Navigation extends serious.Widget
             result          = @scope.pillen()
             if search_keywords
                 result = result.filter (item) ->
-                    return serious.Utils.startswith(item.Name.toLowerCase(), search_keywords.toLowerCase())
+                    return serious.Utils.startswith(item.name.toLowerCase(), search_keywords.toLowerCase())
             if color
                 result = result.filter (item) ->  item.base_color == color
             return result

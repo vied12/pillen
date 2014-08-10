@@ -12,37 +12,37 @@
     </div>
   </div>
   <div data-bind="foreach: filteredPillen" class="pillen">
-    <div data-bind="attr: {title: Name, id: 'pill_'+ $index()}, css: 'sprite-sprites-'+classe, click: $root.showInfos" class="color has-tip"></div>
+    <div data-bind="attr: {title: name, id: 'pill_'+ $index()}, css: 'sprite-pillen-'+classe, click: $root.showInfos" class="color has-tip"></div>
   </div>
   <div data-bind="with: selectedPil" id="myModal" data-reveal class="reveal-modal reveal-modal">
-    <h1 data-bind="text: Name"></h1>
+    <h1 data-bind="text: name"></h1>
     <div class="row">
       <div class="medium-8 columns">
         <table>
           <tbody>
             <tr>
               <td>{% trans %}Composition{% endtrans %}</td>
-              <td data-bind="text: Inhalt"></td>
+              <td data-bind="text: inhalt"></td>
             </tr>
             <tr>
               <td>{% trans %}Breakline{% endtrans %}</td>
-              <td data-bind="text: Bruchrille"></td>
+              <td data-bind="text: bruchrille"></td>
             </tr>
             <tr>
               <td>{% trans %}Date{% endtrans %}</td>
-              <td data-bind="text: Datum"></td>
+              <td data-bind="text: datum"></td>
             </tr>
             <tr>
               <td>{% trans %}Thickness{% endtrans %}</td>
-              <td data-bind="text: Dicke"></td>
+              <td data-bind="text: dicke"></td>
             </tr>
             <tr>
               <td>{% trans %}Diameter{% endtrans %}</td>
-              <td data-bind="text: Durchmesser"></td>
+              <td data-bind="text: durchmesser"></td>
             </tr>
             <tr>
               <td>{% trans %}Place{% endtrans %}</td>
-              <td data-bind="html: Ort"></td>
+              <td data-bind="html: ort"></td>
             </tr>
           </tbody>
         </table>

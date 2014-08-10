@@ -19,10 +19,11 @@
 #     along with Serious-Toolkit.  If not, see <http://www.gnu.org/licenses/>.
 
 PROJECT_NAME = "Pillen"
-PYC          = $(wildcard *.pyc */*.pyc sources/*/*.pyc sources/*/*/*.pyc sources/*/*/*/*.pyc sources/*/*/*/*/*.pyc)
+PYC          = $(wildcard *.pyc */*.pyc sources/*/*.pyc sources/*/*/*.pyc sources/*/*/*/*.pyc sources/*/*/*/*/*.pyc scripts/*.pyc)
 CACHE        = $(wildcard static/.webassets-cache static/gen)
 WEBAPP       = $(wildcard webapp.py)
 RM           = rm -fr
+MV           = mv -f
 VENV         = `pwd`/.env
 VIRTUALENV   = virtualenv
 PIP          = pip
@@ -67,5 +68,18 @@ archive: freeze
 	@tar cvjf "$(PROJECT_NAME)-$(TIMESTAMP).tar.bz2" "$(PROJECT_NAME)-$(TIMESTAMP)"
 	@rm -rf $(PROJECT_NAME)-$(TIMESTAMP)
 	@echo "archive $(PROJECT_NAME)-$(TIMESTAMP).tar.bz2 created"
+
+updatedata: clean
+	# $(RM) tmp/** -r
+	-mkdir tmp/pictures
+	-mkdir tmp/pillen
+	. `pwd`/.env ; python scripts/scraper.py > tmp/pillen.json
+	. `pwd`/.env ; python scripts/get_colors.py > tmp/pillen_with_zcolor.json
+	. `pwd`/.env ; python scripts/resize_pillen.py
+	. `pwd`/.env ; glue tmp/pillen static/sprites
+	convert static/sprites/pillen.png static/sprites/pillen.jpg
+	sed -i 's/\.png/\.jpg/g' static/sprites/pillen.css
+	$(RM) static/sprites/pillen.png
+	$(MV) tmp/pillen_with_zcolor.json static/pillen.json
 
 # EOF

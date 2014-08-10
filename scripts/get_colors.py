@@ -91,13 +91,13 @@ def kmeans(points, k, min_diff):
     return clusters
 
 if __name__ == "__main__":
-    data = json.load(open("../pillen.json"))[:]
+    data = json.load(open("tmp/pillen.json"))
     for i, pil in enumerate(data):
         if not "colorz" in pil: pil["colorz"] = []
         print >> sys.stderr, i, "/", len(data)
         for image in pil["images"]:
             try:
-                colors = colorz("../static/pillen/%s" % image)
+                colors = colorz("tmp/pictures/%s" % image)
                 pil["colorz"].append(colors[0])
             except:
                 pass

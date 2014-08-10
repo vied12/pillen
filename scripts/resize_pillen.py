@@ -79,9 +79,8 @@ def resize_and_crop(img_path, modified_path, size, crop_type='top'):
    
 if __name__ == "__main__":
     import os, glob
-    from subprocess import call
-    for image in glob.glob("../tmp/*"):
-        resize(image, os.path.join("../static/pillen", os.path.basename(image)), (100, 100))
-        resize_and_crop(image, os.path.join("/tmp/sprites", os.path.basename(image)), (50, 50), crop_type='middle')
-    call(["glue", "/tmp/sprites", "../static/sprite"])
+    for image in glob.glob("tmp/pictures/*"):
+        resize(image, os.path.join("static/pillen", os.path.basename(image)), (100, 100))
+        resize_and_crop(image, os.path.join("tmp/pillen", os.path.basename(image)), (50, 50), crop_type='middle')
+
 # EOF
