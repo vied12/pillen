@@ -9,4 +9,3 @@ build/
 *.log
 node_modules/
 tmp/
-page.html
