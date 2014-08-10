@@ -19,7 +19,7 @@ import os
 
 if __name__ == "__main__":
     results = []
-    html    = html.fromstring(open("page.html").read())
+    html    = html.fromstring(open("tmp/page.html").read())
     names   = map(lambda _: _.text_content(),  html.get_element_by_id("cc").findall("h2"))
     for i, tag in enumerate(html.find_class("inhalt_pillen")):
         infos  = dict(name=names[i])
