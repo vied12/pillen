@@ -6,7 +6,7 @@
 	serious.Widget.bindAll();
 	$(document).foundation();
 	$.preload(["static/sprite/sprites.jpg"], function() {
-		$("body").removeClass("loading");
+		$("body").removeClass("loading").addClass("loaded");
 		$(document).foundation('joyride', 'start');
 	});
 </script>

@@ -10,7 +10,7 @@
     <div class="colors columns large-9">
       <div data-bind="click: filterPillen.bind($data, undefined)" id="firstStop" class="color all"></div>
       <!-- ko foreach: colors-->
-      <div data-bind="style: {'backgroundColor': $data}, click: $parent.filterPillen, attr: {id: 'color_'+ $index()}" class="color"></div>
+      <div data-bind="style: {'backgroundColor': $data}, click: $root.filterPillen, attr: {id: 'color_'+ $index()}, css : {'selected': $root.colorFiltered() == $data}" class="color"></div>
       <!-- /ko-->
     </div>
     <div class="search-logo columns large-3">
@@ -18,7 +18,7 @@
     </div>
   </div>
   <div data-bind="foreach: filteredPillen" class="pillen">
-    <div data-bind="attr: {title: Name, id: 'pill_'+ $index()}, css: 'sprite-sprites-'+classe, click: $parent.showInfos" class="color has-tip"></div>
+    <div data-bind="attr: {title: Name, id: 'pill_'+ $index()}, css: 'sprite-sprites-'+classe, click: $root.showInfos" class="color has-tip"></div>
   </div>
   <div data-bind="with: selectedPil" id="myModal" data-reveal class="reveal-modal reveal-modal">
     <h1 data-bind="text: Name"></h1>
