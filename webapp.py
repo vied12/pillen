@@ -63,6 +63,24 @@ def index_de():
 	response = make_response(render_template('home.html'))
 	return response
 
+@app.route('/embeddable-en.html')
+def embeddable_en():
+	g.language = "en"
+	response = make_response(render_template('embeddable.html'))
+	return response
+
+@app.route('/embeddable-fr.html')
+def embeddable_fr():
+	g.language = "fr"
+	response = make_response(render_template('embeddable.html'))
+	return response
+
+@app.route('/embeddable-de.html')
+def embeddable_de():
+	g.language = "de"
+	response = make_response(render_template('embeddable.html'))
+	return response
+
 # -----------------------------------------------------------------------------
 #
 #    UTILS
