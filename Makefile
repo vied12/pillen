@@ -73,6 +73,7 @@ updatedata: clean
 	# $(RM) tmp/** -r
 	-mkdir tmp/pictures
 	-mkdir tmp/pillen
+	curl http://www.mindzone.info/aktuelles/pillenwarnungen/ > tmp/page.html
 	. `pwd`/.env ; python scripts/scraper.py > tmp/pillen.json
 	. `pwd`/.env ; python scripts/get_colors.py > tmp/pillen_with_zcolor.json
 	. `pwd`/.env ; python scripts/resize_pillen.py
