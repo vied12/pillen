@@ -33,8 +33,10 @@ body {
 		.color {
 			cursor: pointer;
 			&.selected {
-				// border: 2px solid red;
-				outline: 2px solid rgb(44,44,44);
+				box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.73);
+				-moz-box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.73);
+				-webkit-box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.73);
+				-ms-box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.73);
 			}
 		}
 	}
