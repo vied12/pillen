@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-08-12 18:12+0200\n"
+"POT-Creation-Date: 2014-09-17 11:48+0200\n"
 "PO-Revision-Date: 2014-08-09 22:27+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
@@ -21,11 +21,11 @@ msgstr ""
 msgid "Pillen"
 msgstr ""
 
-#: templates/home.html:5
+#: templates/home.html:6
 msgid "The colorimetric repository of little pills"
 msgstr "Le référentiel colorimétrique des petites pilules"
 
-#: templates/home.html:12
+#: templates/home.html:17
 msgid ""
 "Credits:\n"
 "\t\tDevelopped by <a href=\"https://twitter.com/vied12\" "
@@ -45,17 +45,17 @@ msgstr ""
 "\t\tà partir d'une idée brillante d'<a "
 "href=\"https://twitter.com/annelisebouyer\" target=\"_blank\">Anne-"
 "Lise</a><br/>\n"
-"\t\tet des merveilleux conseils de <a href=\"https://twitter.com/sm_kraus\" "
-"target=\"_blank\">Sebastian</a> et d'<a "
-"href=\"https://twitter.com/olivier_chardin\" "
+"\t\tet des merveilleux conseils de <a "
+"href=\"https://twitter.com/sm_kraus\" target=\"_blank\">Sebastian</a> et "
+"d'<a href=\"https://twitter.com/olivier_chardin\" "
 "target=\"_blank\">Olivier</a>.\n"
 "\t\t"
 
-#: templates/home.html:19
+#: templates/home.html:24
 msgid "Source"
 msgstr "Source"
 
-#: templates/home.html:23
+#: templates/home.html:28
 msgid "Give us feedback and grab the code"
 msgstr "Réagissez et récupérez le code source"
 
@@ -86,7 +86,7 @@ msgstr "Lieu"
 #: templates/navigation.html:61
 msgid ""
 "\n"
-"    <p>Hello ! This is a tree steps tour.</p>\n"
+"    <p>Hello ! This is a three steps tour.</p>\n"
 "    <p>To filter pills, you can select a color.</p>\n"
 "    <p>Black is special. Black means all.</p>\n"
 "    "

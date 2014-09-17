@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-08-12 18:12+0200\n"
+"POT-Creation-Date: 2014-09-17 11:48+0200\n"
 "PO-Revision-Date: 2014-08-09 22:28+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
@@ -21,11 +21,11 @@ msgstr ""
 msgid "Pillen"
 msgstr ""
 
-#: templates/home.html:5
+#: templates/home.html:6
 msgid "The colorimetric repository of little pills"
 msgstr ""
 
-#: templates/home.html:12
+#: templates/home.html:17
 msgid ""
 "Credits:\n"
 "\t\tDevelopped by <a href=\"https://twitter.com/vied12\" "
@@ -40,11 +40,11 @@ msgid ""
 "\t\t"
 msgstr ""
 
-#: templates/home.html:19
+#: templates/home.html:24
 msgid "Source"
 msgstr "Quelle"
 
-#: templates/home.html:23
+#: templates/home.html:28
 msgid "Give us feedback and grab the code"
 msgstr ""
 
@@ -75,7 +75,7 @@ msgstr "Ort"
 #: templates/navigation.html:61
 msgid ""
 "\n"
-"    <p>Hello ! This is a tree steps tour.</p>\n"
+"    <p>Hello ! This is a three steps tour.</p>\n"
 "    <p>To filter pills, you can select a color.</p>\n"
 "    <p>Black is special. Black means all.</p>\n"
 "    "
@@ -96,4 +96,12 @@ msgid ""
 "    <p>Now you now everything. Have a nice party.</p>\n"
 "    "
 msgstr ""
+
+#~ msgid ""
+#~ "\n"
+#~ "    <p>Hello ! This is a tree steps tour.</p>\n"
+#~ "    <p>To filter pills, you can select a color.</p>\n"
+#~ "    <p>Black is special. Black means all.</p>\n"
+#~ "    "
+#~ msgstr ""
 
