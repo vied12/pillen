@@ -1,4 +1,4 @@
-# German translations for PROJECT.
+# German translations for PROJECT PILLEN.
 # Copyright (C) 2014 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
@@ -6,10 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"Report-Msgid-Bugs-To: nospam@swelt.com\n"
 "POT-Creation-Date: 2014-09-17 11:48+0200\n"
 "PO-Revision-Date: 2014-08-09 22:28+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: swelt.com <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
@@ -22,21 +22,23 @@ msgid "Pillen"
 msgstr ""
 
 #: templates/home.html:6
-msgid "The colorimetric repository of little pills"
+msgid "Das große Spektrum von kleinen Pillen"
 msgstr ""
 
 #: templates/home.html:17
 msgid ""
-"Credits:\n"
-"\t\tDevelopped by <a href=\"https://twitter.com/vied12\" "
+"Entwickelt\n"
+"\t\t von <a href=\"https://twitter.com/vied12\" "
 "target=\"_blank\">Édouard</a>\n"
-"\t\tfrom a brillant idea of <a "
+"\t\tnach ein brillianten Idee von <a "
 "href=\"https://twitter.com/annelisebouyer\" target=\"_blank\">Anne-"
 "Lise</a><br/>\n"
-"\t\tand the usefull advice of <a href=\"https://twitter.com/sm_kraus\" "
-"target=\"_blank\">Sebastian</a> and <a "
+"\t\tund den nützlichen Ratschlägen von <a href=\"https://twitter.com/sm_kraus\" "
+"target=\"_blank\">Sebastian</a> und <a "
 "href=\"https://twitter.com/olivier_chardin\" "
-"target=\"_blank\">Olivier</a>.\n"
+"target=\"_blank\">Olivier</a>. Deutsche Übersetzung von <a "
+"href=\"https://twitter.com/swelts\" "
+"target=\"_blank\">Sven</a>.\n"
 "\t\t"
 msgstr ""
 
@@ -75,33 +77,33 @@ msgstr "Ort"
 #: templates/navigation.html:61
 msgid ""
 "\n"
-"    <p>Hello ! This is a three steps tour.</p>\n"
-"    <p>To filter pills, you can select a color.</p>\n"
-"    <p>Black is special. Black means all.</p>\n"
+"    <p>Hallo! Das ist eine Tour in drei Schritten.</p>\n"
+"    <p>Um Pillen zu filtern kannst Du eine Farbe auswählen.</p>\n"
+"    <p>Schwarz bedeutet kein Filter und zeigt alle Pillen an.</p>\n"
 "    "
 msgstr ""
 
 #: templates/navigation.html:68
 msgid ""
 "\n"
-"    <p>You can also search by symbol name.</p>\n"
-"    <p>But keep in mind the selected color is still filtering !</p>\n"
+"    <p>Du kannst außerdem nach einen Symbol suchen.</p>\n"
+"    <p>Aber denke daran das dann immer noch nach der Farbe gefiltert wird!</p>\n"
 "    "
 msgstr ""
 
 #: templates/navigation.html:74
 msgid ""
 "\n"
-"    <p>Wanna more ? Click on a pill.</p>\n"
-"    <p>Now you now everything. Have a nice party.</p>\n"
+"    <p>Du willst mehr? Dann klick auf eine Pille!</p>\n"
+"    <p>Dann hast Du alles. Wir wünschen Dir einen schöne Party und bleibe sauber drauf.</p>\n"
 "    "
 msgstr ""
 
 #~ msgid ""
 #~ "\n"
-#~ "    <p>Hello ! This is a tree steps tour.</p>\n"
-#~ "    <p>To filter pills, you can select a color.</p>\n"
-#~ "    <p>Black is special. Black means all.</p>\n"
+#~ "    <p>Hallo! Das ist eine Tour in drei Schritten.</p>\n"
+#~ "    <p>Um Pillen zu filtern kannst Du eine Farbe auswählen.</p>\n"
+#~ "    <p>Schwarz bedeutet kein Filter und zeigt alle Pillen an.</p>\n"
 #~ "    "
 #~ msgstr ""
 
