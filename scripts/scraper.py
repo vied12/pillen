@@ -17,6 +17,7 @@ import json
 import requests
 import os
 import sys
+import HTMLParser
 
 MOLECULES = map(str.lower, [
     "TFMPP",
@@ -55,8 +56,8 @@ MOLECULES = map(str.lower, [
     "m-CCP",
     "4-F-A",
     ])
-
 if __name__ == "__main__":
+    html_parser = HTMLParser.HTMLParser()
     results = []
     html    = html.fromstring(open("tmp/page.html").read())
     names   = map(lambda _: _.text_content(),  html.get_element_by_id("cc").findall("h2"))
@@ -78,23 +79,30 @@ if __name__ == "__main__":
             tag_idx = line.find("<strong>")
             if tag_idx > -1:
                 key, value = line[tag_idx+8:].replace("</strong>", "").split(":", 1)
-                infos[key.lower()] = value.rstrip().lstrip()
+                infos[key.lower()] = html_parser.unescape(value.rstrip().lstrip())
         # composition
-        inhalt =  infos.get("inhalt")
+        # inhalt =  infos.get("inhalt")
         results.append(infos)
     import re
     import itertools
     for i, result in enumerate(results):
         line = result.get("inhalt", "")
-        mdma = ""
-        if "mdma" in line.lower():
-            number = ""
-            mol    = ""
-            is_a_digit = False
-            is_a_mol   = False
-            for _ in line:
-                if _.isdigit() or _ in [".", ","]:
-                    is_a_digit = True
+    #     mdma = ""
+    #     if "mdma" in line.lower():
+    #         number = ""
+    #         mol    = ""
+    #         is_a_digit = False
+    #         is_a_mol   = False
+    #         for _ in line:
+    #             if _.isdigit() or _ in [".", ","]:
+    #                 is_a_digit = True
+        def parse_qte(qte):
+            qte = qte.replace(",", ".").replace(" ", "")
+            number = re.match("\f", qte)
+            number = re.match("\d+\.*\d*", qte)
+            if number:
+                qte = number.group(0)
+            return qte
         composition = {}
         mol_is_before_number = False
         every_char_exept_unit = "-qwertyuiopasdfhjklzxcvbnm"
@@ -112,7 +120,7 @@ if __name__ == "__main__":
                     before = line[previous_occ:occ.start()]
                     for mol in MOLECULES:
                         if mol in before.lower():
-                            composition[mol] = occ.group(0)
+                            composition[mol] = parse_qte(occ.group(0))
                             break
                     previous_occ = occ.end()
             else:
@@ -123,7 +131,7 @@ if __name__ == "__main__":
                     after = line[occ.end():next_occ]
                     for mol in MOLECULES:
                         if mol in after.lower():
-                            composition[mol] = occ.group(0)
+                            composition[mol] = parse_qte(occ.group(0))
                             break
                     next_occ = 0 - (len(line) - occ.start())
                 pass

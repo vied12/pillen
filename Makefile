@@ -82,5 +82,6 @@ updatedata: clean
 	sed -i 's/\.png/\.jpg/g' static/sprites/pillen.css
 	$(RM) static/sprites/pillen.png
 	$(MV) tmp/pillen_with_zcolor.json static/pillen.json
+	. `pwd`/.env ; python scripts/export_csv.py
 
 # EOF
