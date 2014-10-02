@@ -25,6 +25,7 @@ for pill_id, pill in enumerate(data[:]):
         place       = pill.get("ort"),
         date        = date,
         more_infos  = "",
+        details     = pill.get("inhalt"),
     ))
     for molecule_name, qqt in pill.get("composition", {}).items():
         molecule = next((m for m in molecules if m.get("name") == molecule_name), None)
@@ -42,7 +43,7 @@ for pill_id, pill in enumerate(data[:]):
         composition["quantity_(in_milligrams)."] = qqt
         compositions.append(composition)
 
-pills_keys = ("Pill_id","name","logo","image","image_back","break_notch","color","weight","diameter","thickness","place","date","more_infos")
+pills_keys = ("Pill_id","name","logo","image","image_back","break_notch","color","weight","diameter","thickness","place","date","more_infos", "details")
 with open('static/pillen.csv', 'wb') as csvfile:
     spamwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
     spamwriter.writerow(pills_keys)
