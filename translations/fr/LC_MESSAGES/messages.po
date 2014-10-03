@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-10-03 17:27+0200\n"
+"POT-Creation-Date: 2014-10-03 17:31+0200\n"
 "PO-Revision-Date: 2014-08-09 22:27+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
@@ -82,6 +82,11 @@ msgstr "Diamètre"
 #: templates/navigation.html:44
 msgid "Place"
 msgstr "Lieu"
+
+#: templates/navigation.html:60 templates/navigation.html:67
+#: templates/navigation.html:73
+msgid "Next"
+msgstr "Suivant"
 
 #: templates/navigation.html:61
 msgid ""
