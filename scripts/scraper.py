@@ -25,6 +25,7 @@ MOLECULES = map(str.lower, [
     "MDMA*HCI",
     "Methamphetamin",
     "Amphetamin*HCl",
+    "Metoclopramid",
     "MBZP",
     "mdma",
     "mda",
@@ -32,9 +33,11 @@ MOLECULES = map(str.lower, [
     "Methadon",
     "pmma",
     "2C-B",
+    "2C-E",
     "25C-NBOMe",
     "25I-NBOMe",
     "MDHOET",
+    "Domperidon",
     "Amphetamin",
     "Fluorampheatmin",
     "mcpp",
@@ -48,6 +51,7 @@ MOLECULES = map(str.lower, [
     "MDPV",
     "Amphetamin",
     "Amphetami",
+    "Amphetam",
     "Coffein",
     "MDDMA",
     "4-Fa",
@@ -55,6 +59,10 @@ MOLECULES = map(str.lower, [
     "Amoxicillin",
     "m-CCP",
     "4-F-A",
+    "Metham",
+    "Butylon",
+    "MDPV",
+    "DMA",
     ])
 if __name__ == "__main__":
     html_parser = HTMLParser.HTMLParser()
@@ -85,6 +93,7 @@ if __name__ == "__main__":
         results.append(infos)
     import re
     import itertools
+    count_anomalies = 0
     for i, result in enumerate(results):
         line = result.get("inhalt", "")
     #     mdma = ""
@@ -137,11 +146,12 @@ if __name__ == "__main__":
                 pass
         except StopIteration as e:
             pass
-        # if len(composition) != len(number_occurences):
-        #     print line
-        #     print [_.group(0) for _ in number_occurences], composition
+    #     if len(composition) != len(number_occurences):
+    #         print "%s~~~~~" % count_anomalies, line
+    #         print [_.group(0) for _ in number_occurences], composition
+    #         count_anomalies += 1
         result["composition"] = composition
-    # print sum(len(_["composition"])> 0 for _ in results), "/", len(results)
+    # print "results with at leat one composition found:", sum(len(_["composition"])> 0 for _ in results), "/", len(results)
     print json.dumps(results, indent=4)
 
 # EOF
