@@ -18,7 +18,7 @@ for pill_id, pill in enumerate(data[:]):
         image       = next(images, None),
         image_back  = next(images, None),
         break_notch = pill.get("bruchrille").lower() == "nein",
-        color       = ",".join(pill.get("colorz", [])),
+        color       = pill.get("farbe"),
         weight      = pill.get("gewicht"),
         diameter    = pill.get("durchmesser"),
         thickness   = pill.get("dicke"),
