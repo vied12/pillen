@@ -3,7 +3,7 @@ css_all:
   output: gen/style.css
   filters: cssmin
   contents:
-    - "../static/vendors/loader.css"
+    - "static/vendors/loader.css"
     - "http://fonts.googleapis.com/css?family=Share"
     # - contents:
     #   - "../assets/less/base.less"
@@ -12,7 +12,7 @@ css_all:
     #   output: gen/less.css
     - contents:
       - "../assets/scss/base.scss"
-      filters: scss
+      filters: libsass
       depends: "../assets/**/*.scss"
       output: gen/sass.css
       debug : false
