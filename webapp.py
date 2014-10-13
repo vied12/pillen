@@ -29,7 +29,10 @@ from flask import Flask, render_template, request, send_file, g, \
 	send_from_directory, Response, abort, session, redirect, url_for, make_response
 from flask.ext.assets import Environment, YAMLLoader
 from flask.ext.babel import Babel
+import logging, sys
 
+# logging
+logging.basicConfig(stream=sys.stderr)
 # app
 app = Flask(__name__)
 app.config.from_pyfile("settings.cfg")
