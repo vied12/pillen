@@ -75,6 +75,13 @@ class Navigation extends serious.Widget
 
         ordered_pillen = _.object(Navigation.COLORS, [])
         for d in data
+            # default values
+            d.inhalt      = d.inhalt      or ""
+            d.bruchrille  = d.bruchrille  or ""
+            d.datum       = d.datum       or ""
+            d.dicke       = d.dicke       or ""
+            d.durchmesser = d.durchmesser or ""
+            d.ort         = d.ort         or ""
             color = chroma(d.color).lab()
             diff  = []
             for base_color, i in Navigation.COLORS
