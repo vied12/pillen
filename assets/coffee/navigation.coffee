@@ -51,6 +51,9 @@ class Navigation extends serious.Widget
         @scope.showInfos      = (pil) =>
             @scope.selectedPil(pil)
             @uis.modal_box.foundation('reveal', 'open')
+            # update hash url
+            index = @scope.pillen().length - @scope.pillen().indexOf(pil)
+            window.location.hash = "pill=#{index}"
         @scope.filteredPillen = ko.computed =>
             search_keywords = @scope.searchKeywords()
             color           = @scope.colorFiltered()
@@ -62,6 +65,9 @@ class Navigation extends serious.Widget
                 result = result.filter (item) ->  item.base_color == color
             return result
         $.get("static/pillen.json", @retrieveData)
+        $(document).on 'closed', '[data-reveal]', ->
+            window.location.hash = "pill="
+
 
     retrieveData: (data) =>
         # data = data[..10]
@@ -96,5 +102,9 @@ class Navigation extends serious.Widget
                 d.base_color = Navigation.COLORS[index]
         @scope.pillen(data)
         @scope.colors(Navigation.COLORS)
+        # init from url
+        hash = serious.Utils.getHashParams()
+        if hash.pill? and hash.pill != ""
+            @scope.showInfos(data[data.length - hash.pill])
 
 # EOF
