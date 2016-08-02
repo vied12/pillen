@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+		<meta charset="utf-8"></meta>
+		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="icon" type="image/jpg" href="static/pillen/bild1-5KbBeT.jpg" />
+		<meta property="og:image" content="http://vied12.github.io/pillen/static/screenshot.png"/>
+		<meta property="og:title" content="Le référentiel colorimétrique des petites pilules"/>
+		<meta property="og:site_name" content="Pillen"/>
+		<meta property="og:type" content="website"/>
+		<title>Pillen</title>
+
+		
+<link rel='stylesheet' href='/pillen/static/gen/style.css?1413144863' type='text/css' />
+
+<link rel='stylesheet' href='static/sprites/pillen.css' type='text/css' />
+
+	</head>
+
+	<body class="use-base loading">
+
+		<div class="loader"> </div>
+
+		
+<div class="row">
+	<div class=" large-6 columns">
+		<h1>PILLEN</h1>
+		Le référentiel colorimétrique des petites pilules
+	</div>
+	<div class="large-6 columns large-text-right">
+		<a href="http://www.mindzone.info/aktuelles/pillenwarnungen/" target="_blank"><img src="static/sauberdrauf_mindzone.jpg"/></a>
+	</div>
+</div>
+
+
+<div data-widget="Navigation" class="Navigation row widget">
+  <div class="row">
+    <div class="colors columns large-9">
+      <div data-bind="click: filterPillen.bind($data, undefined)" id="firstStop" class="color all"></div>
+      <!-- ko foreach: colors-->
+      <div data-bind="style: {'backgroundColor': $data}, click: $root.filterPillen, attr: {id: 'color_'+ $index()}, css : {'selected': $root.colorFiltered() == $data}" class="color"></div>
+      <!-- /ko-->
+    </div>
+    <div class="search-logo columns large-3">
+      <input id="secondStop" type="text" placeholder="logo: android, mc donalds ..." data-bind="value: searchKeywords, valueUpdate: 'input'">
+    </div>
+  </div>
+  <div data-bind="foreach: filteredPillen" class="pillen">
+    <div data-bind="attr: {title: name, id: 'pill_'+ $index()}, css: 'sprite-pillen-'+classe, click: $root.showInfos" class="color has-tip"></div>
+  </div>
+  <div data-bind="with: selectedPil" id="myModal" data-reveal class="reveal-modal reveal-modal">
+    <h1 data-bind="text: name"></h1>
+    <div class="row">
+      <div class="medium-8 columns">
+        <table>
+          <tbody>
+            <tr>
+              <td>Composition</td>
+              <td data-bind="text: inhalt"></td>
+            </tr>
+            <tr>
+              <td>Ligne de section</td>
+              <td data-bind="text: bruchrille"></td>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td data-bind="text: datum"></td>
+            </tr>
+            <tr>
+              <td>Épaisseur</td>
+              <td data-bind="text: dicke"></td>
+            </tr>
+            <tr>
+              <td>Diamètre</td>
+              <td data-bind="text: durchmesser"></td>
+            </tr>
+            <tr>
+              <td>Lieu</td>
+              <td data-bind="html: ort"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="medium-4 columns">
+        <div data-bind="foreach: images" class="images">
+          <div data-bind="style: {'backgroundImage': 'url(static/pillen/'+$data+')'}" class="image"></div>
+        </div>
+      </div>
+    </div><a class="close-reveal-modal">&#215;</a>
+  </div>
+</div>
+
+<ol data-joyride class="joyride-list">
+  <li data-id="color_3" data-text="Suivant" data-options="tip_location: bottom; prev_button: false">
+    
+    <p>Bonjour ! Voici un guide rapide en trois étapes.</p>
+    <p>Pour filter les pilules, vous sélectionnez une couleur.</p>
+    <p>Le noir est spécial. Il affiche toutes les pilules.</p>
+    
+  </li>
+  <li data-id="secondStop" data-text="Suivant" data-options="tip_location: bottom; prev_button: false">
+    
+    <p>Vous pouvez aussi chercher par logo.</p>
+    <p>Mais gardez en tête que le filter par couleur est toujours actif.</p>
+    
+  </li>
+  <li data-id="pill_20" data-text="Suivant" data-options="tip_location: top; prev_button: false">
+    
+    <p>Vous voulez en savoir plus ? Cliquez sur une pilule</p>
+    <p>Maintenant vous savez tout. Bonne visite.</p>
+    
+  </li>
+</ol>
+
+<div class="footer row">
+	<div class=" large-6 columns">
+		Crédits:
+		Développé par <a href="https://twitter.com/vied12" target="_blank">Édouard</a>
+		à partir d'une idée brillante d'<a href="https://twitter.com/annelisebouyer" target="_blank">Anne-Lise</a><br/>
+		et des merveilleux conseils de <a href="https://twitter.com/sm_kraus" target="_blank">Sebastian</a> et d'<a href="https://twitter.com/olivier_chardin" target="_blank">Olivier</a>.
+		
+	</div>
+	<div class="large-6 columns large-text-right">
+		Source:
+		<a href="http://www.mindzone.info/aktuelles/pillenwarnungen">www.mindzone.info/aktuelles/pillenwarnungen/</a>
+		<br/>
+		<img src="static/github.png" width="20" />
+		<a href="https://github.com/vied12/pillen"  target="_blank">Réagissez et récupérez le code source</a>
+	</div>
+</div>
+
+
+
+		
+<script type='text/javascript' src='/pillen/static/gen/scripts.js?1416406194'></script>
+
+
+<script>
+	serious.Widget.bindAll();
+	$(document).foundation();
+	$.preload(["static/sprites/pillen.jpg"], function() {
+		$("body").removeClass("loading").addClass("loaded");
+		$(document).foundation('joyride', 'start');
+	});
+</script>
+
+	</body>
+</html>
